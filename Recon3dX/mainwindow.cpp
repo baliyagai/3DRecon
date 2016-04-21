@@ -21,11 +21,11 @@ MainWindow::MainWindow(QWidget *parent) :
     cam_right.update_camera_combo();
 
     imgPairIndex = 0;
-    //leftFileName = "img/left" + QString::number(imgPairIndex) + ".bmp";
-    //rightFileName = "img/right" + QString::number(imgPairIndex) + ".bmp";
+    leftFileName = "img/left" + QString::number(imgPairIndex) + ".bmp";
+    rightFileName = "img/right" + QString::number(imgPairIndex) + ".bmp";
 
-    leftFileName = "img/left.bmp";
-    rightFileName = "img/right.bmp";
+    //leftFileName = "img/left.bmp";
+    //rightFileName = "img/right.bmp";
 }
 
 MainWindow::~MainWindow()
@@ -95,11 +95,11 @@ void MainWindow::on_btn_save_img_clicked()
 {
     imgPairIndex++;
 
-    //leftFileName = "img/left" + QString::number(imgPairIndex) + ".bmp";
-    //rightFileName = "img/right" + QString::number(imgPairIndex) + ".bmp";
+    leftFileName = "img/left" + QString::number(imgPairIndex) + ".bmp";
+    rightFileName = "img/right" + QString::number(imgPairIndex) + ".bmp";
 
-    leftFileName = "img/left.bmp";
-    rightFileName = "img/right.bmp";
+    //leftFileName = "img/left.bmp";
+    //rightFileName = "img/right.bmp";
 
     cam_left.saveImage(leftFileName);
     cam_right.saveImage(rightFileName);
@@ -135,8 +135,8 @@ void MainWindow::on_btn_show_disparity_clicked()
 
 void MainWindow::on_btn_save_res_clicked()
 {
-    //QString pclFileName = "pcl/pointcloud" + QString::number(imgPairIndex);
-    QString pclFileName = "pcl/pointcloud";
+    QString pclFileName = "pcl/pointcloud" + QString::number(imgPairIndex);
+    //QString pclFileName = "pcl/pointcloud";
     engine.savePCL(pclFileName);
 }
 
