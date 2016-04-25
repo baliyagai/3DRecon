@@ -18,8 +18,12 @@ void CameraObj::setUIControls(QComboBox *combox, QLabel *label, ImageLabel *imag
     this->camera_resolution_label = label;
     this->camera_image = imagelabel;
 
-    connect(camera_combo, SIGNAL(currentIndexChanged(int)), this, SLOT(on_camera_combo_currentIndexChanged(int)));
+    //connect(camera_combo, SIGNAL(currentIndexChanged(int)), this, SLOT(on_camera_combo_currentIndexChanged(int)));
+    //用activated信号，即使选择一样都会触发
+    connect(camera_combo, SIGNAL(activated(int)), this, SLOT(on_camera_combo_currentIndexChanged(int)));
 }
+
+
 
 int CameraObj::update_camera_combo(void)
 {

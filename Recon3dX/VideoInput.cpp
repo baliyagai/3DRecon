@@ -216,7 +216,7 @@ QStringList VideoInput::list_devices_dshow(bool silent)
     QStringList list;
 
 #ifdef _MSC_VER
-    ICreateDevEnum *pDevEnum = NULL;
+    ICreateDevEnum *pDevEnum = NULL;//vs提供的一个枚举器的类别过滤器,如视频捕捉设备或音频捕捉设备
     IEnumMoniker *pEnum = NULL;
     int deviceCounter = 0;
     

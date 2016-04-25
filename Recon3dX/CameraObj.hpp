@@ -18,6 +18,7 @@ public:
     ~CameraObj();
 
     int update_camera_combo(void);
+    void init_camera_combo(void);//by zhy;list all options
 
     bool start_camera(void);
     void stop_camera(void);
